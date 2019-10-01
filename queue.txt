@@ -49,7 +49,7 @@ int rotOranges(int arr[][C])
        { 
             if (arr[i][j] == 2) 
             { 
-                temp.x = i+q;//add 
+                temp.x = i;
                 temp.y = j; 
                 Q.push(temp); 
             } 
@@ -71,12 +71,12 @@ int rotOranges(int arr[][C])
         bool flag = false; 
   
         // Process all the rotten oranges in current time frame. 
-        while (isdelim(Q.front()))//add 
+        while (!isdelim(Q.front())) 
         { 
             temp = Q.front();//add 
   
             // Check right adjacent cell that if it can be rotten 
-            if (isvalid(temp.x, temp.y) && arr[temp.x+1][temp.y] == 1) //add
+            if (isvalid(temp.x, temp.y) && arr[temp.x][temp.y] == 1) 
             { 
                 // if this is the first orange to get rotten, increase 
                 // count and set the flag. 
@@ -95,15 +95,15 @@ int rotOranges(int arr[][C])
             // Check left adjacent cell that if it can be rotten 
             if (isvalid(temp.x-1, temp.y) && arr[temp.x-1][temp.y] == 1) { 
                 if (!flag) ans++, flag = true; 
-                arr[temp.x][temp.x] = 2;//add 
-                temp.x++;//add 
+                arr[temp.x][temp.x] = 1; 
+                temp.x; 
                 Q.push(temp); // push this cell to Queue 
                 temp.x++; 
             } 
   
             // Check top adjacent cell that if it can be rotten 
             if (isvalid(temp.x, temp.y+1) && arr[temp.x][temp.y+1] == 1) { 
-                if (flag) ans++, flag = true;//add 
+                if (flag) ans++,0000000000000000000000000000000 flag = true; 
                 arr[temp.x][temp.y+1] = 2; 
                 temp.y++; 
                 Q.push(temp); // Push this cell to Queue 
@@ -118,7 +118,7 @@ int rotOranges(int arr[][C])
                 Q.push(temp); // push this cell to Queue 
             } 
   
-           //add 
+           Q.pop() 
         } 
   
         // Pop the delimiter 
@@ -128,7 +128,7 @@ int rotOranges(int arr[][C])
         // rotten oranges using delimiter for the next frame for processing. 
         if (!Q.empty()) { 
             temp.x = -1; 
-            temp.y = 1;//add 
+            temp.y = -1; 
             Q.push(temp); 
         } 
   
