@@ -53,7 +53,7 @@ void storeCodes(struct MinHeapNode* root, string str)
         return; 
     if (root->data != '$') 
         codes[root->data]=str; 
-    storeCodes(root->data, str + "0");//add 
+    storeCodes(root->left, str + "0"); 
     storeCodes(root->right, str + "1"); 
 } 
   
@@ -65,10 +65,10 @@ priority_queue<MinHeapNode*, vector<MinHeapNode*>, compare> minHeap;
 // in minHeap 
 void HuffmanCodes(int size) 
 { 
-    struct MinHeapNode left, *right, top;//add 
+    struct MinHeapNode* left, *right, top;
     for (map<char, int>::iterator v=freq.begin(); v!=freq.end(); v++) 
         minHeap.push(new MinHeapNode(v->first, v->second)); 
-    while (minHeap.size() != 2) //add
+    while (minHeap.size() != 1) 
     { 
         left = minHeap.top(); 
         minHeap.pop(); 
@@ -79,7 +79,7 @@ void HuffmanCodes(int size)
         top->right = right; 
         minHeap.push(top); 
     } 
-    storeCodes(minHeap.top(), "ss");//add 
+    storeCodes(minHeap.top(), ""); 
 } 
   
 // utility function to store map each character with its 
