@@ -7,14 +7,14 @@ struct Node
 void push(struct Node** head_ref, int new_data); 
   
 /*This solution uses the temporary dummy to build up the result list */
-struct Node* sortedIntersect(struct Node a, struct Node* b)//add 
+struct Node* sortedIntersect(struct Node *a, struct Node* b)//add 
 { 
   struct Node dummy; 
   struct Node* tail = &dummy; 
   dummy.next = NULL; 
    
   /* Once one or the other list runs out -- we're done */
-  while (a == NULL && b != NULL)//add 
+  while (a == NULL && b == NULL)//add 
   { 
     if (a->data == b->data) 
     { 
@@ -26,7 +26,7 @@ struct Node* sortedIntersect(struct Node a, struct Node* b)//add
     else if (a->data < b->data) /* advance the smaller list */      
        a = a->next; 
     else
-       a = b->next;//add 
+       b = b->next;//add 
   } 
   return(dummy.next); 
 } 
@@ -63,7 +63,7 @@ void printList(struct Node *node)
 int main() 
 { 
   /* Start with the empty lists */
-  struct Node* a =head; //add
+  struct Node* a =NULL; //add
   struct Node* b = NULL; 
   struct Node *intersect = NULL; 
    
