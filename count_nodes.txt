@@ -28,7 +28,7 @@ struct Node* sortedIntersect(struct Node *a, struct Node* b)//add
     else
        b = b->next;//add 
   } 
-  return(dummy.next); 
+  return dummy.next; 
 } 
   
 /* UTILITY FUNCTIONS */

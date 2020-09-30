@@ -47,7 +47,7 @@ int rotOranges(int arr[][C])
     { 
        for (int j=0; j<C; j++) 
        { 
-            if (arr[i][j] == 2) 
+            if (arr[i][j] == 1) 
             { 
                 temp.x = i;
                 temp.y = j; 

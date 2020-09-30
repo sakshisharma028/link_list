@@ -119,7 +119,7 @@ string decode_file(struct MinHeapNode* root, string s)
 // Driver program to test above functions 
 int main() 
 { 
-    string str = "geeksforgeeks"; 
+    string str = "geeks"; 
     string encodedString, decodedString; 
     calcFreq(str, str.length()); 
     HuffmanCodes(str.length()); 
